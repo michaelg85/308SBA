@@ -56,80 +56,80 @@
 const courseInfo = {
     id: 451,
     name: "Introduction to JavaScript"
-  };
-  
-  // The provided assignment group.
-  const assignmentGroup = {
+};
+
+// The provided assignment group.
+const assignmentGroup = {
     id: 12345,
     name: "Fundamentals of JavaScript",
     course_id: 451,
     group_weight: 25,
     assignments: [
-      {
-        id: 1,
-        name: "Declare a Variable",
-        due_at: "2023-01-25",
-        points_possible: 50
-      },
-      {
-        id: 2,
-        name: "Write a Function",
-        due_at: "2023-02-27",
-        points_possible: 150
-      },
-      {
-        id: 3,
-        name: "Code the World",
-        due_at: "3156-11-15",
-        points_possible: 500
-      }
+        {
+            id: 1,
+            name: "Declare a Variable",
+            due_at: "2023-01-25",
+            points_possible: 50
+        },
+        {
+            id: 2,
+            name: "Write a Function",
+            due_at: "2023-02-27",
+            points_possible: 150
+        },
+        {
+            id: 3,
+            name: "Code the World",
+            due_at: "3156-11-15",
+            points_possible: 500
+        }
     ]
-  };
-  
-  // The provided learner submission data.
-  const learnerSubmissions = [
+};
+
+// The provided learner submission data.
+const learnerSubmissions = [
     {
-      learner_id: 125,
-      assignment_id: 1,
-      submission: {
-        submitted_at: "2023-01-25",
-        score: 47
-      }
+        learner_id: 125,
+        assignment_id: 1,
+        submission: {
+            submitted_at: "2023-01-25",
+            score: 47
+        }
     },
     {
-      learner_id: 125,
-      assignment_id: 2,
-      submission: {
-        submitted_at: "2023-02-12",
-        score: 150
-      }
+        learner_id: 125,
+        assignment_id: 2,
+        submission: {
+            submitted_at: "2023-02-12",
+            score: 150
+        }
     },
     {
-      learner_id: 125,
-      assignment_id: 3,
-      submission: {
-        submitted_at: "2023-01-25",
-        score: 400
-      }
+        learner_id: 125,
+        assignment_id: 3,
+        submission: {
+            submitted_at: "2023-01-25",
+            score: 400
+        }
     },
     {
-      learner_id: 132,
-      assignment_id: 1,
-      submission: {
-        submitted_at: "2023-01-24",
-        score: 39
-      }
+        learner_id: 132,
+        assignment_id: 1,
+        submission: {
+            submitted_at: "2023-01-24",
+            score: 39
+        }
     },
     {
-      learner_id: 132,
-      assignment_id: 2,
-      submission: {
-        submitted_at: "2023-03-07",
-        score: 140
-      }
+        learner_id: 132,
+        assignment_id: 2,
+        submission: {
+            submitted_at: "2023-03-07",
+            score: 140
+        }
     }
-  ];
-  
+];
+
 //   function getLearnerData(course, ag, submissions) {
 //     // here, we would process this data to achieve the desired result.
 //     const result = [
@@ -146,12 +146,12 @@ const courseInfo = {
 //         2: 0.833 // late: (140 - 15) / 150
 //       }
 //     ];
-  
+
 //     return result;
 //   }
-  
+
 //   const result = getLearnerData(CourseInfo, AssignmentGroup, LearnerSubmissions);
-  
+
 //   console.log(result);
 
 
@@ -160,31 +160,49 @@ const courseInfo = {
 //     // the ID of the learner for which this data has been collected
 //     "id": number,
 
-let newArray = []
-// let i = learnerSubmissions
 
-for(let i = 0; i < learnerSubmissions.length; i++){
+let i = learnerSubmissions
 
-    if(i == 1){
+for (let i = 0; i < learnerSubmissions.length; i++) {
+
+    if (i == 1) {
         continue;
-    }{
-        if(i == 2){
+    } {
+        if (i == 2) {
             continue;
-        }{
-            if(i == 4){
+        } {
+            if (i == 4) {
                 continue;
             }
         }
     }
-    console.log(`Learner ID:` , learnerSubmissions[i])
+    console.log(`Learner ID:`, learnerSubmissions[i])
 }
+
+//.forEach 
+
+// learnerSubmissions.forEach((el, index) => {
+//     if()
+// });
+
 // console.log(learnerSubmissions);
+
+//calling on a key:value
+
+// for (const key in learnerSubmissions) {
+// 	console.log(learnerSubmissions[key[0]]);
+// }
+// if (learnerSubmissions.learner_id == learner_id) console.log(learner_id)
 
 //     // the learner’s total, weighted average, in which assignments
 //     // with more points_possible should be counted for more
 //     // e.g. a learner with 50/100 on one assignment and 190/200 on another
 //     // would have a weighted average score of 240/300 = 80%.
 //     "avg": number,
+
+console.log(`Learner ID#125 has an average of`, ((47 + 150) / 2))
+
+console.log(`Learner ID#132 has an average of`, ((39 + 140) / 2))
 
 //     // each assignment should have a key with its ID,
 //     // and the value associated with it should be the percentage that
@@ -197,7 +215,13 @@ for(let i = 0; i < learnerSubmissions.length; i++){
 
 
 
-  //   If an AssignmentGroup does not belong to its course (mismatching course_id), your program should throw an error, letting the user know that the input was invalid. Similar data validation should occur elsewhere within the program.
+//   If an AssignmentGroup does not belong to its course (mismatching course_id), your program should throw an error, letting the user know that the input was invalid. Similar data validation should occur elsewhere within the program.
+
+try {
+    if (course.id !== 451);
+} catch (error) {
+    console.error(`Error`, error);
+}
 
 // You should also account for potential errors in the data that your program receives. What if points_possible is 0? You cannot divide by zero. What if a value that you are expecting to be a number is instead a string? 
 
@@ -207,6 +231,6 @@ for(let i = 0; i < learnerSubmissions.length; i++){
 
 // Create a function named getLearnerData() that accepts these values as parameters, in the order listed: (CourseInfo, AssignmentGroup, [LearnerSubmission]), and returns the formatted result, which should be an array of objects as described above.
 
-
+console.log('I will be spending the rest of the weekend practicing loops and functions!')
 
 
