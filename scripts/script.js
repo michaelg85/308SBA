@@ -130,29 +130,29 @@ const courseInfo = {
     }
   ];
   
-  function getLearnerData(course, ag, submissions) {
-    // here, we would process this data to achieve the desired result.
-    const result = [
-      {
-        id: 125,
-        avg: 0.985, // (47 + 150) / (50 + 150)
-        1: 0.94, // 47 / 50
-        2: 1.0 // 150 / 150
-      },
-      {
-        id: 132,
-        avg: 0.82, // (39 + 125) / (50 + 150)
-        1: 0.78, // 39 / 50
-        2: 0.833 // late: (140 - 15) / 150
-      }
-    ];
+//   function getLearnerData(course, ag, submissions) {
+//     // here, we would process this data to achieve the desired result.
+//     const result = [
+//       {
+//         id: 125,
+//         avg: 0.985, // (47 + 150) / (50 + 150)
+//         1: 0.94, // 47 / 50
+//         2: 1.0 // 150 / 150
+//       },
+//       {
+//         id: 132,
+//         avg: 0.82, // (39 + 125) / (50 + 150)
+//         1: 0.78, // 39 / 50
+//         2: 0.833 // late: (140 - 15) / 150
+//       }
+//     ];
   
-    return result;
-  }
+//     return result;
+//   }
   
-  const result = getLearnerData(CourseInfo, AssignmentGroup, LearnerSubmissions);
+//   const result = getLearnerData(CourseInfo, AssignmentGroup, LearnerSubmissions);
   
-  console.log(result);
+//   console.log(result);
 
 
 // Your goal is to analyze and transform this data such that the output of your program is an array of objects, each containing the following information in the following format:
@@ -160,9 +160,25 @@ const courseInfo = {
 //     // the ID of the learner for which this data has been collected
 //     "id": number,
 
-for(let iD = 0; learnerId < learnerId.length){
-    console.log(iD)
+let newArray = []
+// let i = learnerSubmissions
+
+for(let i = 0; i < learnerSubmissions.length; i++){
+
+    if(i == 1){
+        continue;
+    }{
+        if(i == 2){
+            continue;
+        }{
+            if(i == 4){
+                continue;
+            }
+        }
+    }
+    console.log(`Learner ID:` , learnerSubmissions[i])
 }
+// console.log(learnerSubmissions);
 
 //     // the learner’s total, weighted average, in which assignments
 //     // with more points_possible should be counted for more
